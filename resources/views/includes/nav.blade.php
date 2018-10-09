@@ -24,7 +24,7 @@
                        aria-haspopup="true" aria-expanded="false">Dashboard</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
                         <a class="dropdown-item" href="/profile">Profile</a>
-                        <a class="dropdown-item" href="/costs">Costs</a>
+                        <a class="dropdown-item" href="{{ route('costs.index') }}">Costs</a>
                         <a class="dropdown-item" href="/schedules">Schedule</a>
                     </div>
                 </li>

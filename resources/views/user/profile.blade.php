@@ -9,23 +9,20 @@
                 <td>Username</td>
                 <td> {{ $user->name }} </td>
                 <td>
-                    <button type="button" class="btn btn-outline-dark btn-sm btn-block">Edit</button>
+                    <a href="" class="btn btn-outline-dark btn-sm btn-block">Edit</a>
                 </td>
             </tr>
             <tr>
                 <td>Email</td>
                 <td> {{ $user->email }} </td>
-                <td>
-                    <button type="button" class="btn btn-outline-dark btn-sm btn-block">Edit</button>
-                </td>
             </tr>
             <tr>
                 <td>Total costs</td>
-                <td>0</td>
+                <td>{{ $user->costs()->count() }}</td>
             </tr>
             <tr>
                 <td>Total spent</td>
-                <td>0</td>
+                <td>{{ $user->costs()->sum('amount') }}</td>
             </tr>
             </tbody>
         </table>
