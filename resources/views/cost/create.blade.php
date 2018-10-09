@@ -27,6 +27,19 @@
                 </form>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-4 mt-5 offset-4">
+                @if ($errors->any())
+                    <div class="container">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li class="list-group-item list-group-item-danger mb-1">{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+            </div>
+        </div>
     </div>
 
 @endsection

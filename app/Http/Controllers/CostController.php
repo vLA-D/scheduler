@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateCost;
 use App\Models\Cost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -48,9 +49,15 @@ class CostController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateCost $request)
     {
-        return redirect('home');
+        Cost::create([
+            'amount'  => $request->amount,
+            'user_id' => auth()->user()->id,
+            'seller'  => 2
+        ]);
+
+        return redirect()->route('costs.index');
     }
 
     /**
