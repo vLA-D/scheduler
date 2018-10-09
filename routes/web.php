@@ -12,12 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home.index');
 });
 Route::get('home', function () {
-    return view('home');
+    return view('home.index');
 });
 
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
+Route::get('profile', 'UserController@profile')->name('profile');
+Route::get('news', 'HomeController@news')->name('news');
+Route::get('about', 'HomeController@about')->name('about');
