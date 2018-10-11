@@ -21,7 +21,7 @@
             @auth
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="/profile" id="dropdown01" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">Dashboard</a>
+                       aria-haspopup="true" aria-expanded="false">{{ auth()->user()->name }}</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
                         <a class="dropdown-item" href="/profile">Profile</a>
                         <a class="dropdown-item" href="{{ route('costs.index') }}">Costs</a>
