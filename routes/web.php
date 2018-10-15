@@ -17,10 +17,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('costs', 'CostController');
+Route::resources([
+    'costs'   => 'CostController',
+    'sellers' => 'SellerController'
+]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('profile', 'UserController@profile')->name('profile');
 Route::get('news', 'HomeController@news')->name('news');
 Route::get('about', 'HomeController@about')->name('about');
-

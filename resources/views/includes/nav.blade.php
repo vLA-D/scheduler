@@ -11,19 +11,20 @@
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/news">News <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ route('news') }}">News <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/about">About <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ route('about') }}">About <span class="sr-only">(current)</span></a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
             @auth
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="/profile" id="dropdown01" data-toggle="dropdown"
+                    <a class="nav-link dropdown-toggle" href="{{ route('profile') }}" id="dropdown01"
+                       data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">{{ auth()->user()->name }}</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="dropdown-item" href="/profile">Profile</a>
+                        <a class="dropdown-item" href="{{ route('profile') }}">Profile</a>
                         <a class="dropdown-item" href="{{ route('costs.index') }}">Costs</a>
                         <a class="dropdown-item" href="/schedules">Schedule</a>
                     </div>
@@ -41,10 +42,10 @@
                 </li>
             @else
                 <li class="nav-item">
-                    <a class="nav-link" href="/login">Login</a>
+                    <a class="nav-link" href="{{ route('login') }}">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/register">Register</a>
+                    <a class="nav-link" href="{{ route('register') }}">Register</a>
                 </li>
             @endauth
 

@@ -18,11 +18,16 @@ class CreateCostsTable extends Migration
     {
         Schema::create('costs', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title', 64);
             $table->integer('amount');
+            $table->string('description');
             $table->unsignedInteger('user_id');
+            $table->unsignedInteger('seller_id');
 
             $table->foreign('user_id')
                 ->references('id')->on('users');
+            $table->foreign('seller_id')
+                ->references('id')->on('sellers');
 
             $table->timestamps();
         });

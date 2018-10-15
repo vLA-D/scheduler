@@ -29,8 +29,10 @@ class CreateCost extends FormRequest
     public function rules()
     {
         return [
-            'amount' => 'required|integer',
-            'seller' => 'required|string|max:20|min:3'
+            'title'       => 'required|string:64',
+            'amount'      => 'required|integer',
+            'description' => 'required|string:255',
+            'seller'      => 'required|integer|exists:sellers,id'
         ];
     }
 }

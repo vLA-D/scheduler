@@ -15,7 +15,10 @@ class Cost extends Model
      */
     protected $fillable = [
         'amount',
-        'user_id'
+        'user_id',
+        'title',
+        'description',
+        'seller_id'
     ];
 
     /**
@@ -24,5 +27,13 @@ class Cost extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function seller()
+    {
+        return $this->belongsTo(Seller::class);
     }
 }
