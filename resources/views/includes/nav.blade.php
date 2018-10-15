@@ -27,18 +27,16 @@
                         <a class="dropdown-item" href="{{ route('profile') }}">Profile</a>
                         <a class="dropdown-item" href="{{ route('costs.index') }}">Costs</a>
                         <a class="dropdown-item" href="/schedules">Schedule</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
+                        <a class="dropdown-item text-danger" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
                        document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
+                            {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
+                    </div>
                 </li>
             @else
                 <li class="nav-item">
