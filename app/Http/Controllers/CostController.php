@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateCost;
+use App\Http\Requests\CostCreate;
+use App\Http\Requests\CostUpdate;
 use App\Models\Cost;
-use App\Models\Seller;
+use App\Services\CostService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 /**
  * Class CostController
@@ -29,7 +29,7 @@ class CostController extends Controller
      */
     public function index()
     {
-        $costs = Cost::where('user_id', Auth::user()->id)->paginate(10);
+        $costs = auth()->user()->costs()->with('seller')->paginate(10);
 
         return view('cost.index', ['costs' => $costs]);
     }
@@ -41,32 +41,24 @@ class CostController extends Controller
      */
     public function create()
     {
-        $sellers = Seller::all();
-
-        return view('cost.create', ['sellers' => $sellers]);
+        return view('cost.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param CostCreate $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateCost $request)
+    public function store(CostCreate $request)
     {
-        Cost::create([
-            'seller_id'   => $request->seller,
-            'title'       => $request->title,
-            'amount'      => $request->amount,
-            'description' => $request->description,
-            'user_id'     => auth()->user()->id,
-        ]);
+        CostService::create($request);
 
         return redirect()->route('costs.index');
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified resource. TODO
      *
      * @param  \App\Models\Cost $cost
      * @return \Illuminate\Http\Response
@@ -90,16 +82,20 @@ class CostController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param CostUpdate $request
      * @param  \App\Models\Cost $cost
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cost $cost)
+    public function update(CostUpdate $request, Cost $cost)
     {
-        return redirect('home');
+        CostService::update($request, $cost);
+
+        return redirect()->route('costs.index');
     }
 
     /**
+     * Delete the specified resource.
+     *
      * @param Cost $cost
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception

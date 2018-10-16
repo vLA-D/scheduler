@@ -3,13 +3,12 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Auth;
 
 /**
- * Class CreateCost
+ * Class CostCreate
  * @package App\Http\Requests
  */
-class CreateCost extends FormRequest
+class CostCreate extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -18,7 +17,7 @@ class CreateCost extends FormRequest
      */
     public function authorize()
     {
-        return Auth::check();
+        return auth()->check();
     }
 
     /**
