@@ -43,7 +43,11 @@
             @endforeach
             </tbody>
         </table>
-
+        <div class="row">
+            <div class="col-2 offset-5">
+                {{ $costs->links() }}
+            </div>
+        </div>
         <!-- Modal -->
         <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal"
              aria-hidden="true">
@@ -68,7 +72,7 @@
 
         <hr>
         <div class="row">
-            <div class="col-2 offset-5 align-self-center">
+            <div class="col-2 offset-5">
                 <a href="{{ route('costs.create') }}" class="btn btn-primary btn-lg">Add new</a>
             </div>
         </div>

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cost;
+use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -20,12 +23,19 @@ class UserController extends Controller
     }
 
     /**
+     * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function profile()
+    public function profile(Request $request)
     {
-        $user = Auth::user();
+        $user = $request->user();
+        $user->load('costs');
 
-        return view('user.profile', ['user' => $user]);
+        $this_month = $user->costs
+            ->where('created_at', '<', Carbon::now()->addMonth()->format('Y-m'))
+            ->where('created_at', '>=', Carbon::now()->format('Y-m'))
+            ->sum('amount');
+
+        return view('user.profile', compact('user', 'this_month'));
     }
 }

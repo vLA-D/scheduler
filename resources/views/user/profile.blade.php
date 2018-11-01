@@ -18,11 +18,15 @@
             </tr>
             <tr>
                 <td>Total costs</td>
-                <td>{{ $user->costs()->count() }}</td>
+                <td>{{ $user->costs->count() }}</td>
             </tr>
             <tr>
                 <td>Total spent</td>
-                <td>{{ $user->costs()->sum('amount') }}</td>
+                <td>{{ $user->costs->sum('amount') }}</td>
+            </tr>
+            <tr>
+                <td>This month</td>
+                <td class="text-danger">{{ $this_month }}</td>
             </tr>
             </tbody>
         </table>
