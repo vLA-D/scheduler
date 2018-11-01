@@ -3,8 +3,8 @@
 @section('content')
 
     <div class="container mt-5 mb-5">
-        <h3 class="text-muted mb-3">List of all your costs</h3>
-        <table class="table">
+        <h3 class="text-muted mb-3">Information about your costs</h3>
+        <table class="table stickyTable">
             <thead class="thead-dark">
             <tr>
                 <th scope="col">Time</th>

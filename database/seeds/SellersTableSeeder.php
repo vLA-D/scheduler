@@ -30,5 +30,8 @@ class SellersTableSeeder extends Seeder
         Seller::create([
             'name' => 'Lilly'
         ]);
+        Seller::create([
+            'name' => 'Other'
+        ]);
     }
 }
