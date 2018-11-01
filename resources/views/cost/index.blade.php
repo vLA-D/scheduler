@@ -4,50 +4,53 @@
 
     <div class="container mt-5 mb-5">
         <h3 class="text-muted mb-3">Information about your costs</h3>
-        <table class="table stickyTable">
-            <thead class="thead-dark">
-            <tr>
-                <th scope="col">Time</th>
-                <th scope="col">Seller</th>
-                <th scope="col">Title</th>
-                <th scope="col">Amount</th>
-                <th scope="col">Description</th>
-                <th></th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach($costs as $cost)
+        <div class="stickyTable">
+            <table class="table">
+                <thead class="thead-dark">
                 <tr>
-                    <td> {{ $cost->created_at->format('d-m-Y') }} </td>
-                    <td> {{ $cost->seller->name }} </td>
-                    <td> {{ $cost->title }} </td>
-                    <td> {{ $cost->amount }} </td>
-                    <td> {{ $cost->description }} </td>
-                    <td>
-                        <a class="btn btn-outline-dark btn-sm btn-block"
-                           href="{{ route('costs.edit', ['id' => $cost->id]) }}">Edit</a>
-                    </td>
-                    <td>
-                        <form id="delete-cost" action="{{ route('costs.destroy', ['id' => $cost->id]) }}" method="POST">
-                            @method('DELETE')
-                            @csrf
-                            <button type="button"
-                                    class="btn btn-outline-danger btn-sm btn-block" data-toggle="modal"
-                                    data-target="#deleteModal">Remove
-                            </button>
-
-                        </form>
-                    </td>
+                    <th scope="col">Time</th>
+                    <th scope="col">Seller</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Description</th>
+                    <th></th>
+                    <th></th>
                 </tr>
-            @endforeach
-            </tbody>
-        </table>
-        <div class="row">
-            <div class="col-2 offset-5">
-                {{ $costs->links() }}
-            </div>
+                </thead>
+                <tbody>
+                @foreach($costs as $cost)
+                    <tr>
+                        <td> {{ $cost->created_at->format('d-m-Y') }} </td>
+                        <td> {{ $cost->seller->name }} </td>
+                        <td> {{ $cost->title }} </td>
+                        <td> {{ $cost->amount }} </td>
+                        <td> {{ $cost->description }} </td>
+                        <td>
+                            <a class="btn btn-outline-dark btn-sm btn-block"
+                               href="{{ route('costs.edit', ['id' => $cost->id]) }}">Edit</a>
+                        </td>
+                        <td>
+                            <form id="delete-cost" action="{{ route('costs.destroy', ['id' => $cost->id]) }}"
+                                  method="POST">
+                                @method('DELETE')
+                                @csrf
+                                <button type="button"
+                                        class="btn btn-outline-danger btn-sm btn-block" data-toggle="modal"
+                                        data-target="#deleteModal">Remove
+                                </button>
+
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
         </div>
+
+        <div class="row justify-content-center">
+            {{ $costs->links() }}
+        </div>
+
         <!-- Modal -->
         <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal"
              aria-hidden="true">
