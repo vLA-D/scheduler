@@ -22,7 +22,7 @@
                     <tr>
                         <td> {{ $cost->created_at->format('d-m-Y') }} </td>
                         <td> {{ $cost->seller->name }} </td>
-                        <td> {{ $cost->title }} </td>
+                        <td> <a href="{{ route('costs.show', $cost->id) }}">{{ $cost->title }} </a></td>
                         <td> {{ $cost->amount }} </td>
                         <td> {{ $cost->description }} </td>
                         <td>
@@ -51,27 +51,7 @@
             {{ $costs->links() }}
         </div>
 
-        <!-- Modal -->
-        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal"
-             aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="deleteModal">Delete cost</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        Are you sure you want to delete cost?
-                    </div>
-                    <div class="modal-footer">
-                        <button onclick="deleteCost()" type="button" class="btn btn-primary">Delete</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @include('includes.delete-cost-modal')
 
         <hr>
         <div class="row">
@@ -82,11 +62,4 @@
         <hr>
     </div>
 
-@endsection
-@section('scripts')
-    <script>
-        function deleteCost() {
-            document.getElementById('delete-cost').submit();
-        }
-    </script>
 @endsection

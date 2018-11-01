@@ -65,7 +65,7 @@ class CostController extends Controller
      */
     public function show(Cost $cost)
     {
-        //
+        return view('cost.show', compact('cost'));
     }
 
     /**
@@ -104,6 +104,6 @@ class CostController extends Controller
     {
         $cost->delete();
 
-        return redirect()->back();
+        return redirect()->route('costs.index');
     }
 }
