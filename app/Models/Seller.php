@@ -9,4 +9,12 @@ class Seller extends Model
     protected $fillable = [
         'name'
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function costs()
+    {
+        return $this->hasMany(Cost::class);
+    }
 }
