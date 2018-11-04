@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
 //        });
 
         View::composer(['cost.create', 'cost.edit'], function ($view) {
-            $view->with('sellers', Seller::all());
+            $view->with('sellers', Seller::orderBy('name', 'ASC')->get());
         });
     }
 

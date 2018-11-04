@@ -11,12 +11,22 @@
 
                     <div class="form-group">
                         <label for="seller">Seller:</label>
-                        <select class="form-control" name="seller">
-                            <option value="" disabled selected>Select your option...</option>
-                            @foreach ($sellers as $seller)
-                                <option class="form-control" value="{{ $seller->id }}">{{ $seller->name }}</option>
-                            @endforeach
-                        </select>
+                        <div class="form-row">
+                            <div class="form-col">
+
+                                <select class="form-control" name="seller">
+                                    <option value="" disabled selected>Select your option...</option>
+
+                                    @foreach ($sellers as $seller)
+                                        <option class="form-control" value="{{ $seller->id }}">{{ $seller->name }}</option>
+                                    @endforeach
+
+                                </select>
+                            </div>
+                            <div class="form-col m-auto">
+                                <a href="{{ route('sellers.create') }}"><span class="btn btn-success">Add new</span></a>
+                            </div>
+                        </div>
                     </div>
 
                         <div class="form-group">
@@ -46,7 +56,7 @@
                             <button type="submit" class="btn btn-outline-success">Save</button>
                         </div>
                         <div class="col-2 offset-3">
-                            <a href="{{ route('costs.index') }}" class="btn btn-outline-danger ml-2">Back</a>
+                            <a href="{{ url()->previous() }}" class="btn btn-outline-danger ml-2">Back</a>
                         </div>
                     </div>
                 </form>

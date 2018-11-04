@@ -49,7 +49,7 @@
                         </div>
 
                         <div class="col-2 offset-3">
-                            <a href="{{ route('costs.index') }}" class="btn btn-outline-danger ml-2">Back</a>
+                            <a href="{{ url()->previous() }}" class="btn btn-outline-danger ml-2">Back</a>
                         </div>
                     </div>
                 </form>

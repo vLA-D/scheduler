@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Seller;
 use Illuminate\Http\Request;
+use App\Http\Requests\SellerCreate;
 
 /**
  * Class SellerController
@@ -35,7 +37,7 @@ class SellerController extends Controller
      */
     public function create()
     {
-        //
+        return view('seller.create');
     }
 
     /**
@@ -44,9 +46,11 @@ class SellerController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SellerCreate $request)
     {
-        //
+        Seller::create($request->all());
+
+        return redirect()->route('costs.create');
     }
 
     /**
