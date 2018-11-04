@@ -21,7 +21,8 @@ class CostService
             'title'       => $request->title,
             'amount'      => $request->amount,
             'description' => $request->description,
-            'user_id'     => auth()->user()->id,
+            'date'        => $request->date,
+            'user_id'     => auth()->user()->id
         ]);
     }
 

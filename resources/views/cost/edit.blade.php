@@ -21,14 +21,19 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="amount">Amount:</label>
+                        <input type="text" class="form-control" id="amount" name="amount" value="{{ $cost->amount }}">
+                    </div>
+
+                    <div class="form-group">
                         <label for="title">Title:</label>
                         <input type="text" class="form-control" id="title" name="title" placeholder="Title"
                                value="{{ $cost->title }}">
                     </div>
 
                     <div class="form-group">
-                        <label for="amount">Amount:</label>
-                        <input type="text" class="form-control" id="amount" name="amount" value="{{ $cost->amount }}">
+                        <label for="date">Date:</label>
+                        <input type="date" class="form-control" id="date" name="date" value="{{ $cost->date }}">
                     </div>
 
                     <div class="form-group">

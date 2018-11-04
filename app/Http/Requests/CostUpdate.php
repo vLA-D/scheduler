@@ -31,7 +31,8 @@ class CostUpdate extends FormRequest
             'title'       => 'string:64',
             'amount'      => 'integer',
             'description' => 'string:255',
-            'seller_id'   => 'integer|exists:sellers,id'
+            'seller_id'   => 'integer|exists:sellers,id',
+            'date'        => 'date'
         ];
     }
 }

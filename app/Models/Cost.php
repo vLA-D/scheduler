@@ -18,6 +18,7 @@ class Cost extends Model
         'user_id',
         'title',
         'description',
+        'date',
         'seller_id'
     ];
 

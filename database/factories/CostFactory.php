@@ -24,6 +24,7 @@ $factory->define(App\Models\Cost::class, function (Faker $faker) {
         },
         'seller_id' => function() {
             return factory('App\Models\Seller')->create()->id;
-        }
+        },
+        'date'      => Carbon::now()
     ];
 });

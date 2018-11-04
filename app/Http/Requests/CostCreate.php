@@ -31,7 +31,8 @@ class CostCreate extends FormRequest
             'title'       => 'required|string:64',
             'amount'      => 'required|integer',
             'description' => 'required|string:255',
-            'seller'      => 'required|integer|exists:sellers,id'
+            'seller'      => 'required|integer|exists:sellers,id',
+            'date'        => 'date'
         ];
     }
 }

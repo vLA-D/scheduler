@@ -19,15 +19,19 @@
                         </select>
                     </div>
 
+                        <div class="form-group">
+                        <label for="amount">Amount:</label>
+                        <input type="text" class="form-control" id="amount" name="amount" placeholder="Amount">
+                    </div>
+
                     <div class="form-group">
                         <label for="title">Title:</label>
                         <input type="text" class="form-control" id="title" name="title" placeholder="Title">
                     </div>
 
                     <div class="form-group">
-
-                        <label for="amount">Amount:</label>
-                        <input type="text" class="form-control" id="amount" name="amount" placeholder="Amount">
+                        <label for="date">Date:</label>
+                        <input type="date" class="form-control" id="date" name="date" value="{{ Carbon\Carbon::now()->format("Y-m-d") }}">
                     </div>
 
                     <div class="form-group">

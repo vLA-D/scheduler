@@ -29,7 +29,7 @@ class CostController extends Controller
      */
     public function index()
     {
-        $costs = auth()->user()->costs()->with('seller')->latest()->paginate(5);
+        $costs = auth()->user()->costs()->with('seller')->orderBy('date', 'DESC')->paginate(5);
 
         return view('cost.index', ['costs' => $costs]);
     }

@@ -2,32 +2,39 @@
 
 @section('content')
 
-    <div class="container mt-5">
+            <div class="row mt-5">
+                <div class="col-md-6 offset-3 text-center">
+                    <div class="card">
+                      <div class="card-header">
+                        Title: {{ $cost->title }}
+                      </div>
+                      <div class="card-body">
+                        <blockquote class="blockquote mb-3">
+                            <p><small>Description: </small>{{ $cost->description}}</p>
+                            <p><small>Amount: </small> {{ $cost->amount }} </p>
+                            <footer class="blockquote-footer"><cite title="Source Title">At {{ $cost->seller->name}},
+                           {{ $cost->date }} </cite></footer>
+                        </blockquote>
+                        <a class="btn btn-outline-success" href="{{ route('costs.index') }}" role="button">Back &raquo;</a>
+                        <a class="btn btn-outline-secondary" href="{{ route('costs.edit', $cost->id) }}" role="button">Edit &raquo;</a>
 
-        <div class="row">
-            <div class="col-md-6 offset-4 alert alert-heading">
-                <h2><strong>Title:</strong> {{ $cost->title }}</h2>
-                <p><strong>Amount:</strong> {{ $cost->amount }}</p>
-                <p><strong>Seller:</strong> {{ $cost->seller->name }}</p>
-                <p><strong>Description: </strong>{{ $cost->description }}</p>
-                <a class="btn btn-outline-success" href="{{ route('costs.index') }}" role="button">Back &raquo;</a>
-                <a class="btn btn-outline-secondary" href="{{ route('costs.edit', $cost->id) }}" role="button">Edit &raquo;</a>
+                        <form id="delete-cost" class="custom-control-inline" action="{{ route('costs.destroy', $cost->id) }}"
+                            method="POST">
+                            @method('DELETE')
+                            @csrf
 
-                <form id="delete-cost" class="custom-control-inline" action="{{ route('costs.destroy', $cost->id) }}"
-                      method="POST">
-                    @method('DELETE')
-                    @csrf
-
-                    <button type="button"
+                            <button type="button"
                             class="btn btn-outline-danger" data-toggle="modal"
                             data-target="#deleteModal">Delete &raquo;
-                    </button>
+                            </button>
 
-                </form>
-
+                        </form>
+                      </div>
+                    </div>
+                </div>
             </div>
+
             @include('includes.delete-cost-modal')
-        <hr>
 
     </div>
 

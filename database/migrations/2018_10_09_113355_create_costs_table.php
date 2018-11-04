@@ -21,6 +21,7 @@ class CreateCostsTable extends Migration
             $table->string('title', 64);
             $table->integer('amount');
             $table->string('description');
+            $table->string('date');
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('seller_id');
 

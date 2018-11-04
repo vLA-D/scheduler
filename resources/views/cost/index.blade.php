@@ -20,11 +20,14 @@
                 <tbody>
                 @foreach($costs as $cost)
                     <tr>
-                        <td> {{ $cost->created_at->format('d-m-Y') }} </td>
+                        <td> {{ $cost->date }} </td>
                         <td> {{ $cost->seller->name }} </td>
-                        <td> <a href="{{ route('costs.show', $cost->id) }}">{{ $cost->title }} </a></td>
+                        <td> {{ $cost->title }} </a></td>
                         <td> {{ $cost->amount }} </td>
-                        <td> {{ $cost->description }} </td>
+                        <td>
+                            <a class="btn btn-outline-secondary btn-sm btn-block"
+                               href="{{ route('costs.show', $cost->id) }}">View more »</a>
+                        </td>
                         <td>
                             <a class="btn btn-outline-dark btn-sm btn-block"
                                href="{{ route('costs.edit', ['id' => $cost->id]) }}">Edit</a>

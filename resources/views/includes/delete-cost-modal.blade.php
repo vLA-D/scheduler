@@ -12,7 +12,7 @@
                 Are you sure you want to delete cost?
             </div>
             <div class="modal-footer">
-                <button onclick="deleteCost()" type="button" class="btn btn-primary">Delete</button>
+                <button onclick="deleteCost()" type="button" class="btn btn-danger">Delete</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
             </div>
         </div>
