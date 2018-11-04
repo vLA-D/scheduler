@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container mt-5 mb-5">
+    <div class="container mt-5 mb-5 table-responsive">
         <table class="table table-bordered">
             <tbody>
             <tr>

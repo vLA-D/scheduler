@@ -4,7 +4,7 @@
 
     <div class="container mt-5 mb-5">
         <h3 class="text-muted mb-3">Information about your costs</h3>
-        <div class="stickyTable">
+        <div class="table-responsive stickyTable">
             <table class="table">
                 <thead class="thead-dark">
                 <tr>
@@ -12,7 +12,7 @@
                     <th scope="col">Seller</th>
                     <th scope="col">Title</th>
                     <th scope="col">Amount</th>
-                    <th scope="col">Description</th>
+                    <!-- <th scope="col">Description</th> -->
                     <th></th>
                     <th></th>
                 </tr>
@@ -26,9 +26,9 @@
                         <td> {{ $cost->amount }} </td>
                         <td>
                             <a class="btn btn-outline-secondary btn-sm btn-block"
-                               href="{{ route('costs.show', $cost->id) }}">View more »</a>
+                               href="{{ route('costs.show', $cost->id) }}">View details »</a>
                         </td>
-                        <td>
+<!--                         <td>
                             <a class="btn btn-outline-dark btn-sm btn-block"
                                href="{{ route('costs.edit', ['id' => $cost->id]) }}">Edit</a>
                         </td>
@@ -41,7 +41,7 @@
                                         class="btn btn-outline-danger btn-sm btn-block" data-toggle="modal"
                                         data-target="#deleteModal">Remove
                                 </button>
-
+ -->
                             </form>
                         </td>
                     </tr>
