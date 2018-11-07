@@ -22,7 +22,9 @@ Route::resources([
     'sellers' => 'SellerController'
 ]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('home', 'HomeController@index')->name('home');
 Route::get('profile', 'UserController@profile')->name('profile');
 Route::get('news', 'HomeController@news')->name('news');
 Route::get('about', 'HomeController@about')->name('about');
+Route::get('contact', 'HomeController@contact')->name('contact');
+Route::get('schedules', 'HomeController@schedule')->name('schedule');
