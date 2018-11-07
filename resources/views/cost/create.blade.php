@@ -3,8 +3,8 @@
 @section('content')
 
     <div class="container mt-5 mb-5">
-        <div class="row mt-5">
-            <div class="col-md-4 mt-5 offset-4">
+        <div class="row mt-5 justify-content-center">
+            <div class="col-md-4 mt-5">
                 <h2>Add new cost</h2>
                 <form action="{{ route('costs.store') }}" method="POST">
                     @csrf
@@ -62,8 +62,8 @@
                 </form>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4 mt-5 offset-4">
+        <div class="row justify-content-center">
+            <div class="col-md-4 mt-5">
                 @if ($errors->any())
                     <div class="container">
                         <ul>

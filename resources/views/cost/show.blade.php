@@ -1,9 +1,9 @@
 @extends('layouts.master')
 
 @section('content')
-
-            <div class="row mt-5">
-                <div class="col-md-6 offset-3 text-center">
+        <div class="container">
+            <div class="row mt-5 justify-content-center">
+                <div class="col-md-6 text-center">
                     <div class="card">
                       <div class="card-header">
                         Title: {{ $cost->title }}
@@ -36,6 +36,6 @@
 
             @include('includes.delete-cost-modal')
 
-    </div>
+        </div>
 
 @endsection

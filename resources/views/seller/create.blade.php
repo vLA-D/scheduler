@@ -3,8 +3,8 @@
 @section('content')
 
     <div class="container mt-5 mb-5">
-        <div class="row mt-5">
-            <div class="col-md-4 mt-5 offset-4">
+        <div class="row mt-5 justify-content-center">
+            <div class="col-md-4 mt-5">
                 <h2>Add new seller</h2>
                 <form action="{{ route('sellers.store') }}" method="POST">
                     @csrf
