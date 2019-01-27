@@ -69,8 +69,8 @@
             @endforeach
         </div>
 
-        <div class="row mt-5">
-            <div class="col-2 offset-5">
+        <div class="row mt-5 justify-content-center">
+            <div class="col-2">
                 {{ $costs->links() }}
             </div>
         </div>
