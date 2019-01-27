@@ -45,4 +45,20 @@ class HomeController extends Controller
     {
         return view('home.about');
     }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function contact()
+    {
+        return view('home.contact');
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function schedule()
+    {
+        return view('home.schedule');
+    }
 }

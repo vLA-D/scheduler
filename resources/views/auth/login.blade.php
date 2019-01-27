@@ -53,9 +53,6 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                {{--<button type="submit" class="btn btn-primary">--}}
-                                    {{--{{ __('Login') }}--}}
-                                {{--</button>--}}
                                 <button class="btn btn-dark my-2 my-sm-0" type="submit">{{ __('Login') }}</button>
 
 
@@ -69,5 +66,15 @@
             </div>
         </div>
     </div>
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <small>
+                Don't have acount?
+                <a class="badge badge-secondary ml-2" href="{{ route('register') }}">
+                    Sign Up
+                </a>
+            </small>
+        </div>
+</div>
 </div>
 @endsection

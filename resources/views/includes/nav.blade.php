@@ -16,6 +16,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('about') }}">About <span class="sr-only">(current)</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('contact') }}">Contact <span class="sr-only">(current)</span></a>
+            </li>
         </ul>
         <ul class="navbar-nav ml-auto">
             @auth
