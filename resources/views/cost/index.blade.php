@@ -70,9 +70,7 @@
         </div>
 
         <div class="row mt-5 justify-content-center">
-            <div class="col-2">
                 {{ $costs->links() }}
-            </div>
         </div>
 
         @include('includes.delete-cost-modal')
