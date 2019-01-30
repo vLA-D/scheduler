@@ -69,10 +69,8 @@
             @endforeach
         </div>
 
-        <div class="row mt-5">
-            <div class="col-2 offset-5">
+        <div class="row mt-5 justify-content-center">
                 {{ $costs->links() }}
-            </div>
         </div>
 
         @include('includes.delete-cost-modal')
