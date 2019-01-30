@@ -32,7 +32,6 @@ class UserController extends Controller
         $user->load('costs');
 
         $this_month = $user->costs
-            ->where('created_at', '<', Carbon::now()->addMonth()->format('Y-m'))
             ->where('created_at', '>=', Carbon::now()->format('Y-m'))
             ->sum('amount');
 
